@@ -1,0 +1,11 @@
+#!/usr/local/bin/ruby
+
+t = gets.strip.to_i
+
+1.upto(t) do |i|
+  #k is the number of snaps,  k >= 0
+  #n is the number of snappers, n > 1
+  n, k = gets.split.collect{|c| c.to_i}
+  answer = (k==0) ? 'OFF' : k.to_s(2).reverse[0..(n-1)].squeeze == '1'  ? 'ON' : 'OFF'
+  puts "Case ##{i}: #{answer}"
+end
